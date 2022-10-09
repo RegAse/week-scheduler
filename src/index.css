@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #242424;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +12,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Week Schedule Main Page */
+.schedule-day{
+  background-color: #1D384A;
+  color: white;
+}
+
+/* Select Week to plan Page */
