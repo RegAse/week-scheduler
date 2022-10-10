@@ -40,47 +40,20 @@ function App() {
 
   return (
     <div>
-      <nav className='navbar-custom-1'>
+      {/* <nav className='navbar-custom-1'>
 
-      </nav>
+      </nav> */}
 
       <div className='container-fluid'>
         <div className='col-sm-12'>
           <div className='schedule-main-container'>
-            {
-              week.slice(0, -2).map((day) => (
-                <div key={day} className="schedule-day-box">
-                  <div className='schedule-day'>
-                    <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { day: 'numeric' })} {day.toLocaleDateString("en-US", { month: 'long' })}</p>
-                    <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { weekday: 'long' })}</p>
-                    <div className='schedule-title-divider'></div>
-                    <div className='schedule-day-list-schedule-items'>
-                      <div className='schedule-day-list-schedule-item'>
-                        <p className='schedule-day-list-schedule-item-date'>08:30</p>
-                        <p className='schedule-day-list-schedule-item-title'>Watch Rick & Morty</p>
-                      </div>
-                      <div className='schedule-day-list-schedule-item'>
-                        <p className='schedule-day-list-schedule-item-date'>09:00</p>
-                        <p className='schedule-day-list-schedule-item-title'>Yoga</p>
-                      </div>
-                      <div className='schedule-day-list-schedule-item'>
-                        <p className='schedule-day-list-schedule-item-date'>12:30</p>
-                        <p className='schedule-day-list-schedule-item-title'>Yoga</p>
-
-                      </div>
-                      <div className='schedule-day-list-schedule-item'>
-                        <p className='schedule-day-list-schedule-item-date'>17:30</p>
-                        <p className='schedule-day-list-schedule-item-title'>Yoga</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
-            }
-            <div className='schedule-main-weekend'>
+            <div className='schedule-main-previous-week'>
+              <h4>Previous Week</h4>
+            </div>
+            <div className='schedule-main-days-container'>
               {
-                week.slice(-2).map((day) => (
-                  <div key={day} className='schedule-day-box-weekend'>
+                week.slice(0, -2).map((day) => (
+                  <div key={day} className="schedule-day-box">
                     <div className='schedule-day'>
                       <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { day: 'numeric' })} {day.toLocaleDateString("en-US", { month: 'long' })}</p>
                       <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { weekday: 'long' })}</p>
@@ -88,20 +61,49 @@ function App() {
                       <div className='schedule-day-list-schedule-items'>
                         <div className='schedule-day-list-schedule-item'>
                           <p className='schedule-day-list-schedule-item-date'>08:30</p>
-                          <p>Watch Rick & Morty</p>
+                          <p className='schedule-day-list-schedule-item-title'>Watch Rick & Morty</p>
+                        </div>
+                        <div className='schedule-day-list-schedule-item'>
+                          <p className='schedule-day-list-schedule-item-date'>09:00</p>
+                          <p className='schedule-day-list-schedule-item-title'>Yoga</p>
+                        </div>
+                        <div className='schedule-day-list-schedule-item'>
+                          <p className='schedule-day-list-schedule-item-date'>12:30</p>
+                          <p className='schedule-day-list-schedule-item-title'>Yoga</p>
+
+                        </div>
+                        <div className='schedule-day-list-schedule-item'>
+                          <p className='schedule-day-list-schedule-item-date'>17:30</p>
+                          <p className='schedule-day-list-schedule-item-title'>Yoga</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))
               }
+              <div className='schedule-main-weekend'>
+                {
+                  week.slice(-2).map((day) => (
+                    <div key={day} className='schedule-day-box-weekend'>
+                      <div className='schedule-day'>
+                        <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { day: 'numeric' })} {day.toLocaleDateString("en-US", { month: 'long' })}</p>
+                        <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { weekday: 'long' })}</p>
+                        <div className='schedule-title-divider'></div>
+                        <div className='schedule-day-list-schedule-items'>
+                          <div className='schedule-day-list-schedule-item'>
+                            <p className='schedule-day-list-schedule-item-date'>08:30</p>
+                            <p>Watch Rick & Morty</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
             </div>
-          </div>
-          <div className='schedule-main-previous-week'>
-            Previous week
-          </div>
-          <div className='schedule-main-previous-week'>
-            Previous week
+            <div className='schedule-main-next-week'>
+              <h4>Next Week</h4>
+            </div>
           </div>
         </div>
       </div>

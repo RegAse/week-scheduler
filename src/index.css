@@ -14,6 +14,82 @@ code {
     monospace;
 }
 
+/* Centered container for days list */
+.schedule-main-container{
+  max-width: 1300px;
+  width: 80%;
+  /* overflow: auto; */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+  /* overflow-x: auto; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* margin: auto; */
+  scrollbar-width: thin;
+  /* height: 100vh; */
+  /* height: 500px; */
+  /* background-color: red;
+  overflow-x: auto;
+  height: 490px;
+  width: 100%; */
+  /* background-color: red; */
+  overflow: auto;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translateX(-50%);
+  /* transform:translateY(-50%); */
+  /* left: 5%; */
+  margin-top: -300px;
+  /* height: 700px; */
+  /* background-color: rgba(35, 53, 94, 0.25); */
+}
+
+/* Previous week navigation */
+.schedule-main-previous-week{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+  background-color: rgba(14, 28, 60, 0.23);
+  color: white;
+  text-align: center;
+  height: 100px;
+}
+.schedule-main-next-week{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  background-color: rgba(14, 28, 60, 0.23);
+  color: white;
+  text-align: center;
+  height: 100px;
+}
+
+.schedule-main-weekend{
+  /* display: inline-block;
+  min-height: 350px;
+  max-height: 350px;
+  width: 400px;
+  background-color: red; */
+  min-height: 400px;
+  max-height: 400px;
+  max-width: 180px;
+  min-width: 180px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.8em;
+  /* padding: 0.4em; */
+}
+/* .schedule-main-weekend .schedule-day-box{
+  max-height: 100px;
+  min-height: 100px;
+  display: block;
+} */
+
 /* Week Schedule Main Page */
 .schedule-day{
   color: white;
@@ -41,7 +117,7 @@ code {
   min-width: 200px;
   display: inline-block;
   vertical-align: top;
-  margin-left: 0.4em;
+  margin-left: 0.8em;
   padding: 0.4em;
   white-space: nowrap;
 }
@@ -65,56 +141,6 @@ code {
   min-height: 250px;
   min-width: 150px;
   max-width: 150px;
-} */
-.schedule-main-container{
-  max-width: 1300px;
-  width: 80%;
-  /* overflow: auto; */
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* flex-direction: column; */
-  /* overflow-x: auto; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* margin: auto; */
-  scrollbar-width: thin;
-  /* height: 100vh; */
-  /* height: 500px; */
-  /* background-color: red;
-  overflow-x: auto;
-  height: 490px;
-  width: 100%; */
-  /* background-color: red; */
-  overflow: auto;
-  transform:translateX(-50%);
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* left: 5%; */
-  margin-top: -175px;
-  height: 420px;
-}
-
-.schedule-main-weekend{
-  /* display: inline-block;
-  min-height: 350px;
-  max-height: 350px;
-  width: 400px;
-  background-color: red; */
-  min-height: 400px;
-  max-height: 400px;
-  max-width: 180px;
-  min-width: 180px;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 0.4em;
-  /* padding: 0.4em; */
-}
-/* .schedule-main-weekend .schedule-day-box{
-  max-height: 100px;
-  min-height: 100px;
-  display: block;
 } */
 
 /* Title Divider line */
@@ -163,11 +189,6 @@ code {
   line-height: 0.9em;
   font-size: 0.85em;
   font-weight: 600;
-}
-
-/* Previous week navigation */
-.schedule-main-previous-week{
-  background-color: red;
 }
 
 /* Select Week to plan Page */
