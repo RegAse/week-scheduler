@@ -1,12 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 // ScheduleItem is like a todo item....
 
-function getFirstDayOfCurrentWeek(d)
-{
+function getFirstDayOfCurrentWeek(d) {
   d = new Date();
   let day = d.getDay();
   let firstDay = d.getDate() - day + (day == 0 ? -6 : 1);
@@ -14,8 +13,7 @@ function getFirstDayOfCurrentWeek(d)
 }
 
 // Returns the week of the day that is send
-function getWeekByDay(d)
-{
+function getWeekByDay(d) {
   let firstDayOfWeek = getFirstDayOfCurrentWeek();
 
   let daysOfWeek = [new Date(firstDayOfWeek)]
@@ -30,10 +28,10 @@ function getWeekByDay(d)
 
 function App() {
   const [data, setData] = useState([
-    { Id: 0, title: "Yoga", dateFrom: "2022-10-09T08:30:00.00Z", dateTo:"2022-10-09T09:30:00.00Z" },
-    { Id: 1, title: "Wake Up", dateFrom: "2022-10-09T08:00:00.00Z", dateTo:"2022-10-09T08:30:00.00Z" },
+    { Id: 0, title: "Yoga", dateFrom: "2022-10-09T08:30:00.00Z", dateTo: "2022-10-09T09:30:00.00Z" },
+    { Id: 1, title: "Wake Up", dateFrom: "2022-10-09T08:00:00.00Z", dateTo: "2022-10-09T08:30:00.00Z" },
   ]);
-  
+
   const [week, setWeek] = useState(getWeekByDay())
 
   useEffect(() => {
@@ -42,17 +40,69 @@ function App() {
 
   return (
     <div>
+      <nav className='navbar-custom-1'>
+
+      </nav>
+
       <div className='container-fluid'>
-        <div className='row'>
-        {
-        week.map((day) => (
-          <div className='col-sm-2' key={day}>
-            <div className='schedule-day'>
-              <h3>Day: {day.toLocaleString()}</h3>
+        <div className='col-sm-12'>
+          <div className='schedule-main-container'>
+            {
+              week.slice(0, -2).map((day) => (
+                <div key={day} className="schedule-day-box">
+                  <div className='schedule-day'>
+                    <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { day: 'numeric' })} {day.toLocaleDateString("en-US", { month: 'long' })}</p>
+                    <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { weekday: 'long' })}</p>
+                    <div className='schedule-title-divider'></div>
+                    <div className='schedule-day-list-schedule-items'>
+                      <div className='schedule-day-list-schedule-item'>
+                        <p className='schedule-day-list-schedule-item-date'>08:30</p>
+                        <p className='schedule-day-list-schedule-item-title'>Watch Rick & Morty</p>
+                      </div>
+                      <div className='schedule-day-list-schedule-item'>
+                        <p className='schedule-day-list-schedule-item-date'>09:00</p>
+                        <p className='schedule-day-list-schedule-item-title'>Yoga</p>
+                      </div>
+                      <div className='schedule-day-list-schedule-item'>
+                        <p className='schedule-day-list-schedule-item-date'>12:30</p>
+                        <p className='schedule-day-list-schedule-item-title'>Yoga</p>
+
+                      </div>
+                      <div className='schedule-day-list-schedule-item'>
+                        <p className='schedule-day-list-schedule-item-date'>17:30</p>
+                        <p className='schedule-day-list-schedule-item-title'>Yoga</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+            <div className='schedule-main-weekend'>
+              {
+                week.slice(-2).map((day) => (
+                  <div key={day} className='schedule-day-box-weekend'>
+                    <div className='schedule-day'>
+                      <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { day: 'numeric' })} {day.toLocaleDateString("en-US", { month: 'long' })}</p>
+                      <p className='schedule-day-date'>{day.toLocaleDateString("en-US", { weekday: 'long' })}</p>
+                      <div className='schedule-title-divider'></div>
+                      <div className='schedule-day-list-schedule-items'>
+                        <div className='schedule-day-list-schedule-item'>
+                          <p className='schedule-day-list-schedule-item-date'>08:30</p>
+                          <p>Watch Rick & Morty</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
             </div>
           </div>
-        ))
-        }
+          <div className='schedule-main-previous-week'>
+            Previous week
+          </div>
+          <div className='schedule-main-previous-week'>
+            Previous week
+          </div>
         </div>
       </div>
     </div>
